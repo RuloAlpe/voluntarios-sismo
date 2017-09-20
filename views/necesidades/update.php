@@ -6,9 +6,9 @@ use yii\helpers\Html;
 /* @var $model app\models\EntNecesidades */
 
 $this->title = 'Actualizar Necesidades: ' . $model->txt_necesidad;
-$this->params['breadcrumbs'][] = ['label' => 'Necesidades', 'url' => ['index', 'idVol'=>$voluntario->id_voluntario, 'idLoc'=>$localidad->id_localidad]];
-$this->params['breadcrumbs'][] = ['label' => $model->id_necesidad, 'url' => ['view', 'id' => $model->id_necesidad]];
-$this->params['breadcrumbs'][] = 'Actualizar';
+//$this->params['breadcrumbs'][] = ['label' => 'Necesidades', 'url' => ['index', 'idVol'=>$voluntario->id_voluntario, 'idLoc'=>$localidad->id_localidad]];
+//$this->params['breadcrumbs'][] = ['label' => $model->id_necesidad, 'url' => ['view', 'id' => $model->id_necesidad]];
+//$this->params['breadcrumbs'][] = 'Actualizar';
 ?>
 <div class="ent-necesidades-update">
 

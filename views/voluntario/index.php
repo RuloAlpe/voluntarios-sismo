@@ -9,7 +9,7 @@ use app\models\EntLocalidades;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Voluntarios';
-$this->params['breadcrumbs'][] = $this->title;
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ent-voluntario-index">
 

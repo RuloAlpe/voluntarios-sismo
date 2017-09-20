@@ -6,9 +6,9 @@ use yii\helpers\Html;
 /* @var $model app\models\EntVoluntario */
 
 $this->title = 'Actualizar Voluntario: ' . $model->txt_nombre_completo;
-$this->params['breadcrumbs'][] = ['label' => 'Voluntarios', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id_voluntario, 'url' => ['view', 'id' => $model->id_voluntario]];
-$this->params['breadcrumbs'][] = 'Actualizar';
+//$this->params['breadcrumbs'][] = ['label' => 'Voluntarios', 'url' => ['index']];
+//$this->params['breadcrumbs'][] = ['label' => $model->id_voluntario, 'url' => ['view', 'id' => $model->id_voluntario]];
+//$this->params['breadcrumbs'][] = 'Actualizar';
 ?>
 <div class="ent-voluntario-update">
 

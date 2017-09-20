@@ -7,8 +7,8 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\NecesidadesSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Ent Necesidades';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Necesidades';
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ent-necesidades-index">
 

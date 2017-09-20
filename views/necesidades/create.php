@@ -7,8 +7,8 @@ use yii\helpers\Html;
 /* @var $model app\models\EntNecesidades */
 
 $this->title = 'Crear Necesidades';
-$this->params['breadcrumbs'][] = ['label' => 'Necesidades', 'url' => ['index', 'idVol'=>$idVol, 'idLoc'=>$idLoc]];
-$this->params['breadcrumbs'][] = $this->title;
+//$this->params['breadcrumbs'][] = ['label' => 'Necesidades', 'url' => ['index', 'idVol'=>$idVol, 'idLoc'=>$idLoc]];
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ent-necesidades-create">
 

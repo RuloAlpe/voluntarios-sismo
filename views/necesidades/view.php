@@ -7,8 +7,8 @@ use yii\widgets\DetailView;
 /* @var $model app\models\EntNecesidades */
 
 $this->title = $model->txt_necesidad;
-$this->params['breadcrumbs'][] = ['label' => 'Necesidades', 'url' => ['index', 'idVol'=>$voluntario->id_voluntario, 'idLoc'=>$localidad->id_localidad]];
-$this->params['breadcrumbs'][] = $this->title;
+//$this->params['breadcrumbs'][] = ['label' => 'Necesidades', 'url' => ['index', 'idVol'=>$voluntario->id_voluntario, 'idLoc'=>$localidad->id_localidad]];
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ent-necesidades-view">
 

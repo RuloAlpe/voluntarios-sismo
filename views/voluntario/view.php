@@ -8,8 +8,8 @@ use app\models\EntLocalidades;
 /* @var $model app\models\EntVoluntario */
 
 $this->title = $model->txt_email;
-$this->params['breadcrumbs'][] = ['label' => 'Voluntarios', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+//$this->params['breadcrumbs'][] = ['label' => 'Voluntarios', 'url' => ['index']];
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ent-voluntario-view">
 
