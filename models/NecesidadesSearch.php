@@ -39,9 +39,9 @@ class NecesidadesSearch extends EntNecesidades
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
+    public function search($params, $id)
     {
-        $query = EntNecesidades::find();
+        $query = EntNecesidades::find()->where(['id_localidad'=>$id]);
 
         // add conditions that should always apply here
 
