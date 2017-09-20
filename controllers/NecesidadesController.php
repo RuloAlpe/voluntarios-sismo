@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\models\EntLocalidades;
+use app\models\EntVoluntario;
 
 /**
  * NecesidadesController implements the CRUD actions for EntNecesidades model.
@@ -34,15 +35,16 @@ class NecesidadesController extends Controller
      * Lists all EntNecesidades models.
      * @return mixed
      */
-    public function actionIndex($id)
+    public function actionIndex($idVol, $idLoc)
     {
         $searchModel = new NecesidadesSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams,$id);
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams,$idLoc);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            'id' => $id
+            'idLoc' => $idLoc,
+            'idVol' => $idVol
         ]);
     }
 
@@ -53,8 +55,14 @@ class NecesidadesController extends Controller
      */
     public function actionView($id)
     {
+        $model = $this->findModel($id);
+        $localidad = EntLocalidades::find()->where(['id_localidad'=>$model->id_localidad])->one();
+        $voluntario = EntVoluntario::find()->where(['id_voluntario'=>$model->id_voluntario])->one();
+
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
+            'localidad' => $localidad,
+            'voluntario' => $voluntario
         ]);
     }
 
@@ -63,17 +71,21 @@ class NecesidadesController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate($id)
+    public function actionCreate($idVol, $idLoc)
     {
         $model = new EntNecesidades();
-        $localidad = EntLocalidades::find()->where(['id_localidad'=>$id])->one();
+        $localidad = EntLocalidades::find()->where(['id_localidad'=>$idLoc])->one();
+        $voluntario = EntVoluntario::find()->where(['id_voluntario'=>$idVol])->one();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id_necesidad]);
+            return $this->redirect(['index', 'idVol' => $model->id_voluntario, 'idLoc' => $model->id_localidad]);
         } else {
             return $this->render('create', [
                 'model' => $model,
-                'localidad' => $localidad
+                'idVol' => $idVol, 
+                'idLoc' => $idLoc,
+                'localidad' => $localidad,
+                'voluntario' => $voluntario
             ]);
         }
     }
@@ -87,12 +99,16 @@ class NecesidadesController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $localidad = EntLocalidades::find()->where(['id_localidad'=>$model->id_localidad])->one();
+        $voluntario = EntVoluntario::find()->where(['id_voluntario'=>$model->id_voluntario])->one();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id_necesidad]);
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'localidad' => $localidad,
+                'voluntario' => $voluntario
             ]);
         }
     }

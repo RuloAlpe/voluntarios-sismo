@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\EntVoluntario */
 
-$this->title = 'Create Ent Voluntario';
-$this->params['breadcrumbs'][] = ['label' => 'Ent Voluntarios', 'url' => ['index']];
+$this->title = 'Crear Voluntario';
+$this->params['breadcrumbs'][] = ['label' => 'Voluntarios', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ent-voluntario-create">

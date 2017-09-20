@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\EntNecesidades */
 
-$this->title = 'Create Ent Necesidades';
-$this->params['breadcrumbs'][] = ['label' => 'Ent Necesidades', 'url' => ['index']];
+$this->title = 'Crear Necesidades';
+$this->params['breadcrumbs'][] = ['label' => 'Necesidades', 'url' => ['index', 'idVol'=>$idVol, 'idLoc'=>$idLoc]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ent-necesidades-create">
@@ -16,7 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form', [
         'model' => $model,
-        'localidad' => $localidad
+        'localidad' => $localidad,
+        'voluntario' => $voluntario
     ]) ?>
 
 </div>

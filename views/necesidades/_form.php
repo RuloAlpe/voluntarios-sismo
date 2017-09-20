@@ -12,16 +12,16 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id_localidad')->textInput(['maxlength' => true, 'value'=> $localidad->txt_nombre]) ?>
+    <?= $form->field($model, 'id_localidad')->hiddenInput(['value'=> $localidad->id_localidad])->label(false) ?>
 
-    <?= $form->field($model, 'id_voluntario')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'id_voluntario')->hiddenInput(['value'=> $voluntario->id_voluntario])->label(false) ?>
 
     <?= $form->field($model, 'txt_necesidad')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'num_elementos')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Actualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
