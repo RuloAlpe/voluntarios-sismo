@@ -11,7 +11,7 @@ $this->title = 'My Yii Application';
         <h1>Congratulations!</h1>
 
         <p class="lead">You have successfully created your Yii-powered application.</p>
-        <p><a class="btn btn-lg btn-success" href="<?=  Url::to(['voluntario/']); ?>">Quiero ser voluntario</a></p>
+        <p><a class="btn btn-lg btn-success" href="<?=  Url::to(['voluntario/create']); ?>">Quiero ser voluntario</a></p>
         <p><a class="btn btn-lg btn-success" href="<?=  Url::to(['site/soy-voluntario']); ?>">Soy voluntario</a></p>
     </div>
 </div>

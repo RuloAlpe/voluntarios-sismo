@@ -8,6 +8,7 @@ use app\models\NecesidadesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\EntLocalidades;
 
 /**
  * NecesidadesController implements the CRUD actions for EntNecesidades model.
@@ -61,15 +62,17 @@ class NecesidadesController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($id)
     {
         $model = new EntNecesidades();
+        $localidad = EntLocalidades::find()->where(['id_localidad'=>$id])->one();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id_necesidad]);
         } else {
             return $this->render('create', [
                 'model' => $model,
+                'localidad' => $localidad
             ]);
         }
     }

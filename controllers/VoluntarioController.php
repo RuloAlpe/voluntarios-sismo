@@ -66,7 +66,8 @@ class VoluntarioController extends Controller
         $model = new EntVoluntario();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id_voluntario]);
+            //return $this->redirect(['view', 'id' => $model->id_voluntario]);
+            return $this->redirect(['necesidades/create', 'id' => $model->id_localidad]);
         } else {
             return $this->render('create', [
                 'model' => $model,
