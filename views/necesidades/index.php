@@ -43,7 +43,7 @@ $this->title = 'Que se requiere';
                     'template' => '{update} {delete}',
                     'buttons' => [
                         'delete' => function($url, $model){
-                            return Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $model->id], [
+                            return Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $model->id_necesidad], [
                                 'class' => '',
                                 'data' => [
                                     'confirm' => '¿Estas seguro que quieres eliminar este elemento?',
