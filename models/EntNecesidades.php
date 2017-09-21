@@ -49,8 +49,8 @@ class EntNecesidades extends \yii\db\ActiveRecord
             'id_necesidad' => 'Id Necesidad',
             'id_localidad' => 'Id Localidad',
             'id_voluntario' => 'Id Voluntario',
-            'txt_necesidad' => 'Necesidad',
-            'num_elementos' => 'Num de elementos',
+            'txt_necesidad' => 'Describe brevemente lo que se requiere',
+            'num_elementos' => 'Especifíca una cantidad de cosas , 0 si es servicio ',
         ];
     }
 

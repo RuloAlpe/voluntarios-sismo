@@ -43,8 +43,8 @@ class EntLocalidades extends \yii\db\ActiveRecord
     {
         return [
             'id_localidad' => 'Id Localidad',
-            'txt_nombre' => 'Txt Nombre',
-            'b_habilitado' => 'B Habilitado',
+            'txt_nombre' => 'Ubicación de la zona',
+            'b_habilitado' => 'Indica con un 1 si esta activa y 0 si ya no esta activa',
         ];
     }
 
