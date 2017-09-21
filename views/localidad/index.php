@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'txt_nombre',
                         //'b_habilitado',
 
-                        ['class' => 'yii\grid\ActionColumn'],
+                       // ['class' => 'yii\grid\ActionColumn'],
                     ],
                 ]); ?>
 

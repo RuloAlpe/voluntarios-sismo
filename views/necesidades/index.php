@@ -40,7 +40,19 @@ $this->title = 'Que se requiere';
                     'txt_necesidad',
                     'num_elementos',
 
-                    ['class' => 'yii\grid\ActionColumn'],
+                    ['class' => 'yii\grid\ActionColumn',
+                    'template' => '{update} {delete}',
+                    'buttons' => [
+                        'delete' => function($url, $model){
+                            return Html::a('<span class="glyphicon glyphicon-trash"></span>', ['delete', 'id' => $model->id], [
+                                'class' => '',
+                                'data' => [
+                                    'confirm' => '¿Estas seguro que quieres eliminar este elemento?',
+                                    'method' => 'post',
+                                ],
+                            ]);
+                        }
+                    ]],
                 ],
             ]); ?>
 
