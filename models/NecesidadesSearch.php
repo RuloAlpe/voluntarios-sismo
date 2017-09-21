@@ -6,6 +6,7 @@ use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\models\EntNecesidades;
+use yii\db\Expression;
 
 /**
  * NecesidadesSearch represents the model behind the search form about `app\models\EntNecesidades`.
@@ -39,9 +40,13 @@ class NecesidadesSearch extends EntNecesidades
      *
      * @return ActiveDataProvider
      */
-    public function search($params, $id)
+    public function search($params, $id=null)
     {
-        $query = EntNecesidades::find()->where(['id_localidad'=>$id]);
+        if($id){
+            $query = EntNecesidades::find()->where(['id_localidad'=>$id]);
+        }else{
+            $query = EntNecesidades::find();
+        }
 
         // add conditions that should always apply here
 
@@ -66,7 +71,7 @@ class NecesidadesSearch extends EntNecesidades
         ]);
 
         $query->andFilterWhere(['like', 'txt_necesidad', $this->txt_necesidad])
-        ->andFilterWhere(['like', 'fch_creacion', $this->fch_creacion]);
+        ->andFilterWhere(['>', 'fch_creacion', new Expression('NOW()  - INTERVAL 2 HOUR ')]);
 
         return $dataProvider;
     }

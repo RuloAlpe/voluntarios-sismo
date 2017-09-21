@@ -114,3 +114,18 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+.panel-custom{
+    background-color: #0D47A1;
+    color: white;
+}
+
+.panel-custom-2{
+    background-color: #00796B;
+    color: white;
+}
+
+.panel-custom .panel-title,.panel-custom-2 .panel-title{
+    font-size: 27pt;
+    padding: 20px;
+}
