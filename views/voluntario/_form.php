@@ -14,7 +14,7 @@ use app\models\EntLocalidades;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id_localidad')->dropDownList(ArrayHelper::map(EntLocalidades::find()->all(), 'id_localidad', 'txt_nombre'), ['prompt'=>'Seleccionar Zona de desastre']) ?>
+    <?= $form->field($model, 'id_localidad')->dropDownList(ArrayHelper::map(EntLocalidades::find()->orderBy('txt_nombre')->all(), 'id_localidad', 'txt_nombre'), ['prompt'=>'Seleccionar Zona de desastre']) ?>
 
     <?= $form->field($model, 'txt_nombre_completo')->textInput(['maxlength' => true]) ?>
 

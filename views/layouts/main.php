@@ -23,7 +23,7 @@ AppAsset::register($this);
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous">
     </script>
-    <title><?= Html::encode($this->title) ?></title>
+    <title>Voluntarios sismo</title>
     <?php $this->head() ?>
 </head>
 <body>

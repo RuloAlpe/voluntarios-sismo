@@ -60,6 +60,15 @@ class EntVoluntario extends \yii\db\ActiveRecord
         return $this->hasMany(EntNecesidades::className(), ['id_voluntario' => 'id_voluntario']);
     }
 
+    
+   /** 
+    * @return \yii\db\ActiveQuery 
+    */ 
+   public function getRelVoluntariosLocalidades() 
+   { 
+       return $this->hasMany(RelVoluntariosLocalidades::className(), ['id_voluntario' => 'id_voluntario']); 
+   } 
+
     /**
      * @return \yii\db\ActiveQuery
      */
