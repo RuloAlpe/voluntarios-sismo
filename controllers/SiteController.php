@@ -62,7 +62,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $errorLogin = false;
+        return $this->render('index', ['errorLogin'=>$errorLogin]);
     }
 
     /**
@@ -127,15 +128,18 @@ class SiteController extends Controller
 
     public function actionSoyVoluntario(){
         $this->enableCsrfValidation = false;
-
+        $errorLogin = false;
         if(isset($_POST['email'])){
             $voluntario = EntVoluntario::find()->where(['txt_email'=>$_POST['email']])->one();
             if($voluntario){
                 return $this->render('soy_voluntario',[
                     'voluntario' => $voluntario
                 ]);                
+            }else{
+                $errorLogin = true;
+
             }
         } 
-        return $this->render('index');
+        return $this->render('index', ['errorLogin'=>$errorLogin]);
     }
 }

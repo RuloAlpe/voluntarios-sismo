@@ -20,8 +20,16 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'num_elementos')->textInput() ?>
 
-    <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Publicar Solicitud' : 'Actualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+    <div class="col-md-6 text-center">
+        <div class="form-group">
+            <?= Html::submitButton($model->isNewRecord ? 'Publicar Solicitud' : 'Actualizar', ['class' =>  'btn btn-success']) ?>
+        </div>
+    </div>
+
+    <div class="col-md-6 text-center">
+        <div class="form-group">
+            <?=Html::a("ver lista", ['necesidades/index', 'idVol'=>$voluntario->id_voluntario, 'idLoc'=>$voluntario->id_localidad], ['class'=>"btn btn-primary"])?>
+        </div>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -34,7 +34,7 @@ class EntVoluntario extends \yii\db\ActiveRecord
             [['id_localidad', 'txt_nombre_completo', 'txt_email'], 'required', 'message' => 'Campo requerido'],
             [['id_localidad'], 'integer'],
             [['txt_nombre_completo', 'txt_email'], 'string', 'max' => 200],
-            [['txt_email'], 'unique'],
+            [['txt_email'], 'unique', 'message'=>'El email ingresado ya es un voluntario'],
             [['id_localidad'], 'exist', 'skipOnError' => true, 'targetClass' => EntLocalidades::className(), 'targetAttribute' => ['id_localidad' => 'id_localidad']],
         ];
     }
