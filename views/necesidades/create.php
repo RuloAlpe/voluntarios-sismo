@@ -1,5 +1,4 @@
 <?php
-
 use yii\helpers\Html;
 
 
@@ -7,24 +6,25 @@ use yii\helpers\Html;
 /* @var $model app\models\EntNecesidades */
 
 $this->title = 'Nueva solicitud de:';
-$this->params['breadcrumbs'][] = ['label' => 'Necesidades', 'url' => ['index', 'idVol'=>$idVol, 'idLoc'=>$idLoc]];
+$this->params['breadcrumbs'][0] = ['label' => 'Necesidades', 'url' => ['index', 'idVol' => $idVol, 'idLoc' => $idLoc]];
 //$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="container">
 		<div class="row">
-			<div class="col-sm-12">
-				<div class="ent-necesidades-create">
-	
-    <h1><?= Html::encode($this->title) ?></h1>
+			<div class="col-md-6 col-md-offset-3">
+				<div class="panel">
+                    <div class="panel-body">
+                        <h1><?= Html::encode($this->title) ?></h1>
 
-    <?= $this->render('_form', [
-        'model' => $model,
-        'localidad' => $localidad,
-        'voluntario' => $voluntario
-    ]) ?>
-
-</div>
-			</div>
+                        <?= $this->render('_form', [
+                            'model' => $model,
+                            'localidad' => $localidad,
+                            'voluntario' => $voluntario
+                        ]) ?>
+                    </div>
+                </div>
+            </div>
 		</div>
-	</div>
+</div>
+	
 

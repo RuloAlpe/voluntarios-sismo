@@ -20,8 +20,16 @@ use app\models\EntLocalidades;
 
     <?= $form->field($model, 'txt_email')->textInput(['maxlength' => true]) ?>
 
-    <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Voluntariarme' : 'Actualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+    <div class="col-md-6 text-center">
+        <div class="form-group">
+            <?= Html::submitButton($model->isNewRecord ? 'Voluntariarme' : 'Actualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        </div>
+    </div>
+
+    <div class="col-md-6 text-center">
+        <div class="form-group">
+            <?=Html::a("Ya soy voluntario", ['site/index'], ['class'=>"btn btn-primary"])?>
+        </div>
     </div>
 
     <?php ActiveForm::end(); ?>

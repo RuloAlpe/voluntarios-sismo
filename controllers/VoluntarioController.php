@@ -8,6 +8,7 @@ use app\models\VoluntarioSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\RelVoluntariosLocalidades;
 
 /**
  * VoluntarioController implements the CRUD actions for EntVoluntario model.
@@ -67,6 +68,9 @@ class VoluntarioController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
+            $relVoluntarioLocalidad = new RelVoluntariosLocalidades();
+            $relVoluntarioLocalidad->id_localidad = $model->id_localidad;
+            $relVoluntarioLocalidad->id_voluntario = $model->id_voluntario;
             
             //return $this->redirect(['view', 'id' => $model->id_voluntario]);
             return $this->redirect(['necesidades/index', 'idVol' => $model->id_voluntario, 'idLoc' => $model->id_localidad]);
