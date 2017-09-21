@@ -32,7 +32,6 @@ $this->title = 'Que se requiere';
                 'filterModel' => $searchModel,
                 'columns' => [
                     ['class' => 'yii\grid\SerialColumn'],
-
                     //'id_necesidad',
                     //'id_localidad',
                     //'id_voluntario',
