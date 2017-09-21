@@ -23,7 +23,7 @@ AppAsset::register($this);
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous">
     </script>
-    <title>Voluntarios sismo</title>
+    <title>Voluntarios sismo México</title>
     <?php $this->head() ?>
 </head>
 <body>
