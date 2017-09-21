@@ -37,6 +37,7 @@ class NecesidadesController extends Controller
      */
     public function actionIndex($idVol, $idLoc)
     {
+        $lugar = EntLocalidades::find()->where(["id_localidad"=>$idLoc])->one();
         $searchModel = new NecesidadesSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams,$idLoc);
 
@@ -44,7 +45,8 @@ class NecesidadesController extends Controller
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
             'idLoc' => $idLoc,
-            'idVol' => $idVol
+            'idVol' => $idVol,
+            'lugar'=>$lugar
         ]);
     }
 

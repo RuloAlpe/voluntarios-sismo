@@ -9,6 +9,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\EntVoluntario;
+use app\models\NecesidadesSearch;
 
 class SiteController extends Controller
 {
@@ -62,8 +63,12 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        
+        $searchModel = new NecesidadesSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
         $errorLogin = false;
-        return $this->render('index', ['errorLogin'=>$errorLogin]);
+        return $this->render('index', ['errorLogin'=>$errorLogin, 'searchModel'=>$searchModel, 'dataProvider'=>$dataProvider]);
     }
 
     /**

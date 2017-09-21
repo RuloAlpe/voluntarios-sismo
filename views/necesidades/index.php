@@ -17,7 +17,7 @@ $this->title = 'Que se requiere';
             
             <div class="panel">
                 <div class="panel-body">
-                <h1><?= Html::encode($this->title) ?></h1>
+                <h1>Lugar: <?= Html::encode($lugar->txt_nombre) ?></h1>
             <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
             
             <h5>
@@ -34,6 +34,7 @@ $this->title = 'Que se requiere';
                 'columns' => [
                     [
                         'label' => 'Fecha solicitud',
+                        'filter'=>'',
                         'attribute' => 'fch_creacion',
                         'format' => 'raw',
                         'value' => function ($model) {
