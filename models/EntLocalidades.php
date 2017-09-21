@@ -30,7 +30,7 @@ class EntLocalidades extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['txt_nombre'], 'required'],
+            [['txt_nombre'], 'required', 'message' => 'Campo requerido'],
             [['b_habilitado'], 'integer'],
             [['txt_nombre'], 'string', 'max' => 200],
         ];

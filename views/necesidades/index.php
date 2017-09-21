@@ -10,6 +10,7 @@ use yii\grid\GridView;
 $this->title = 'Que se requiere';
 //$this->params['breadcrumbs'][] = $this->title;
 ?>
+
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
@@ -42,7 +43,7 @@ $this->title = 'Que se requiere';
                 ],
             ]); ?>
 
-</div>
+            </div>
         </div>
     </div>
 </div>

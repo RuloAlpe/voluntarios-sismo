@@ -11,6 +11,7 @@ use Yii;
  * @property string $id_localidad
  * @property string $id_voluntario
  * @property string $txt_necesidad
+ * @property string $fch_creacion
  * @property integer $num_elementos
  *
  * @property EntLocalidades $idLocalidad
@@ -32,8 +33,9 @@ class EntNecesidades extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_localidad', 'id_voluntario', 'txt_necesidad', 'num_elementos'], 'required'],
+            [['id_localidad', 'id_voluntario', 'txt_necesidad', 'num_elementos'], 'required', 'message' => 'Campo requerido'],
             [['id_localidad', 'id_voluntario', 'num_elementos'], 'integer'],
+            [['fch_creacion'], 'safe'],
             [['txt_necesidad'], 'string', 'max' => 500],
             [['id_localidad'], 'exist', 'skipOnError' => true, 'targetClass' => EntLocalidades::className(), 'targetAttribute' => ['id_localidad' => 'id_localidad']],
             [['id_voluntario'], 'exist', 'skipOnError' => true, 'targetClass' => EntVoluntario::className(), 'targetAttribute' => ['id_voluntario' => 'id_voluntario']],
@@ -51,6 +53,7 @@ class EntNecesidades extends \yii\db\ActiveRecord
             'id_voluntario' => 'Id Voluntario',
             'txt_necesidad' => 'Describe brevemente lo que se requiere',
             'num_elementos' => 'Especifíca una cantidad de cosas , 0 si es servicio ',
+            'fch_creacion' => 'Fecha Creacion',
         ];
     }
 

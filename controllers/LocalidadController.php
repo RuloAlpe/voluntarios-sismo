@@ -33,7 +33,7 @@ class LocalidadController extends Controller
      * Lists all EntLocalidades models.
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($idVol)
     {
         $searchModel = new LocalidadSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
@@ -41,6 +41,7 @@ class LocalidadController extends Controller
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'idVol' => $idVol
         ]);
     }
 
@@ -61,12 +62,12 @@ class LocalidadController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($idVol)
     {
         $model = new EntLocalidades();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id_localidad]);
+            return $this->redirect(['necesidades/index', 'idVol' => $idVol, 'idLoc' => $model->id_localidad]);
         } else {
             return $this->render('create', [
                 'model' => $model,

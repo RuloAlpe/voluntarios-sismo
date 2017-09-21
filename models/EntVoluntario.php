@@ -31,7 +31,7 @@ class EntVoluntario extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_localidad', 'txt_nombre_completo', 'txt_email'], 'required'],
+            [['id_localidad', 'txt_nombre_completo', 'txt_email'], 'required', 'message' => 'Campo requerido'],
             [['id_localidad'], 'integer'],
             [['txt_nombre_completo', 'txt_email'], 'string', 'max' => 200],
             [['txt_email'], 'unique'],
