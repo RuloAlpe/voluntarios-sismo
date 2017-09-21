@@ -29,6 +29,7 @@ $this->title = 'Necesidades';
             //'id_voluntario',
             'txt_necesidad',
             'num_elementos',
+            'fch_creacion',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

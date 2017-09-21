@@ -19,7 +19,7 @@ class NecesidadesSearch extends EntNecesidades
     {
         return [
             [['id_necesidad', 'id_localidad', 'id_voluntario', 'num_elementos'], 'integer'],
-            [['txt_necesidad'], 'safe'],
+            [['txt_necesidad', 'fch_creacion'], 'safe'],
         ];
     }
 
@@ -62,10 +62,11 @@ class NecesidadesSearch extends EntNecesidades
             'id_necesidad' => $this->id_necesidad,
             'id_localidad' => $this->id_localidad,
             'id_voluntario' => $this->id_voluntario,
-            'num_elementos' => $this->num_elementos,
+            'num_elementos' => $this->num_elementos,           
         ]);
 
-        $query->andFilterWhere(['like', 'txt_necesidad', $this->txt_necesidad]);
+        $query->andFilterWhere(['like', 'txt_necesidad', $this->txt_necesidad])
+        ->andFilterWhere(['like', 'fch_creacion', $this->fch_creacion]);
 
         return $dataProvider;
     }

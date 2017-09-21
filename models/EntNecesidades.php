@@ -11,6 +11,7 @@ use Yii;
  * @property string $id_localidad
  * @property string $id_voluntario
  * @property string $txt_necesidad
+ * @property string $fch_creacion
  * @property integer $num_elementos
  *
  * @property EntLocalidades $idLocalidad
@@ -32,8 +33,9 @@ class EntNecesidades extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_localidad', 'id_voluntario', 'txt_necesidad', 'num_elementos'], 'required'],
+            [['id_localidad', 'id_voluntario', 'txt_necesidad', 'num_elementos'], 'required', 'message' => 'Campo requerido'],
             [['id_localidad', 'id_voluntario', 'num_elementos'], 'integer'],
+            [['fch_creacion'], 'safe'],
             [['txt_necesidad'], 'string', 'max' => 500],
             [['id_localidad'], 'exist', 'skipOnError' => true, 'targetClass' => EntLocalidades::className(), 'targetAttribute' => ['id_localidad' => 'id_localidad']],
             [['id_voluntario'], 'exist', 'skipOnError' => true, 'targetClass' => EntVoluntario::className(), 'targetAttribute' => ['id_voluntario' => 'id_voluntario']],
@@ -47,10 +49,11 @@ class EntNecesidades extends \yii\db\ActiveRecord
     {
         return [
             'id_necesidad' => 'Id Necesidad',
-            'id_localidad' => 'Id Localidad',
-            'id_voluntario' => 'Id Voluntario',
+            'id_localidad' => 'Localidad',
+            'id_voluntario' => 'Voluntario',
             'txt_necesidad' => 'Necesidad',
-            'num_elementos' => 'Num de elementos',
+            'fch_creacion' => 'Fecha Creacion',
+            'num_elementos' => 'Num de Elementos',
         ];
     }
 

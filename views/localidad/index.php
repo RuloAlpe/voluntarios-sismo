@@ -16,7 +16,7 @@ $this->title = 'Localidades';
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Crear Localidades', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear Localidades', ['create', 'idVol' => $idVol], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
