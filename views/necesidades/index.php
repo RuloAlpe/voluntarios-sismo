@@ -23,7 +23,6 @@ $this->title = 'Que se requiere';
             <h5>
                 Revisa que la solicitud para la localidad que seleccionaste no exista ya en el listado para evitar duplicidad de datos.
             </h5>
-
             <p>
                 <?= Html::a('Crear una nueva solicitud', ['create', 'idVol'=>$idVol, 'idLoc'=>$idLoc], ['class' => 'btn btn-warning']) ?>
             </p>
