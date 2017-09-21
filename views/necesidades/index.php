@@ -36,9 +36,9 @@ $this->title = 'Que se requiere';
                     //'id_necesidad',
                     //'id_localidad',
                     //'id_voluntario',
+                    'fch_creacion',
                     'txt_necesidad',
                     'num_elementos',
-                    'fch_creacion',
 
                     ['class' => 'yii\grid\ActionColumn'],
                 ],

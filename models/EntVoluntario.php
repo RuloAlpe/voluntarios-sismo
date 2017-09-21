@@ -46,9 +46,9 @@ class EntVoluntario extends \yii\db\ActiveRecord
     {
         return [
             'id_voluntario' => 'Id Voluntario',
-            'id_localidad' => 'Id Localidad',
-            'txt_nombre_completo' => 'Txt Nombre Completo',
-            'txt_email' => 'Txt Email',
+            'id_localidad' => 'Localidad',
+            'txt_nombre_completo' => 'Nombre Completo',
+            'txt_email' => 'Email',
         ];
     }
 

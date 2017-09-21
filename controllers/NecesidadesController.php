@@ -103,7 +103,7 @@ class NecesidadesController extends Controller
         $voluntario = EntVoluntario::find()->where(['id_voluntario'=>$model->id_voluntario])->one();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id_necesidad]);
+            return $this->redirect(['index', 'idVol' => $model->id_voluntario, 'idLoc' => $model->id_localidad]);
         } else {
             return $this->render('update', [
                 'model' => $model,
