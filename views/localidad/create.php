@@ -6,9 +6,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\EntLocalidades */
 
-$this->title = 'Create Ent Localidades';
-$this->params['breadcrumbs'][] = ['label' => 'Ent Localidades', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Crear Localidades';
+//$this->params['breadcrumbs'][] = ['label' => 'Ent Localidades', 'url' => ['index']];
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ent-localidades-create">
 

@@ -8,9 +8,11 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\EntVoluntario;
 
 class SiteController extends Controller
 {
+    public $enableCsrfValidation = false;
     /**
      * @inheritdoc
      */
@@ -123,8 +125,17 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
-    public function actionSoyVoluntario()
-    {
-        return $this->render('soy_voluntario');
+    public function actionSoyVoluntario(){
+        $this->enableCsrfValidation = false;
+
+        if(isset($_POST['email'])){
+            $voluntario = EntVoluntario::find()->where(['txt_email'=>$_POST['email']])->one();
+            if($voluntario){
+                return $this->render('soy_voluntario',[
+                    'voluntario' => $voluntario
+                ]);                
+            }
+        } 
+        return $this->render('index');
     }
 }
