@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <h1><?= Html::encode($this->title) ?></h1>
                 <h5>Antes de agregar una nueva Zona de desastre revisa si ya existe en la lista de abajo para evitar registros duplicados</h5>
 
-                <p><?= Html::a('Agregar una nueva zona de desastre', ['create'], ['class' => 'btn btn-success']) ?>
+                <p><?= Html::a('Agregar una nueva zona de desastre', ['create', 'idVol' => $idVol,], ['class' => 'btn btn-success']) ?>
                 </p>
 
                 <?= GridView::widget([
