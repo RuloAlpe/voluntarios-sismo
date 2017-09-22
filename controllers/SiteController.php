@@ -134,6 +134,10 @@ class SiteController extends Controller
     public function actionSoyVoluntario(){
         $this->enableCsrfValidation = false;
         $errorLogin = false;
+
+        $searchModel = new NecesidadesSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
         if(isset($_POST['email'])){
             $voluntario = EntVoluntario::find()->where(['txt_email'=>$_POST['email']])->one();
             if($voluntario){
@@ -145,6 +149,6 @@ class SiteController extends Controller
 
             }
         } 
-        return $this->render('index', ['errorLogin'=>$errorLogin]);
+        return $this->render('index', ['errorLogin'=>$errorLogin, 'searchModel'=>$searchModel, 'dataProvider'=>$dataProvider]);
     }
 }
