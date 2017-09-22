@@ -45,16 +45,7 @@ $this->title = 'My Yii Application';
                           </div>  
                       </div>
       
-                      <?php
-                      if ($errorLogin) {
-                        ?>
-                          <div class="alert alert-danger" role="alert">
-                              No existe en la base de datos el email ingresado
-                          </div>
-                      <?php
-
-                    }
-                    ?></div>
+                      </div>
     </div>
   </div>
   <div class="panel">
@@ -115,13 +106,22 @@ $this->title = 'My Yii Application';
   </div>
   
 </div>
-                
+    <?php
+    if ($errorLogin) {
+    ?>
+        <div class="alert alert-danger" role="alert">
+            No existe en la base de datos el email ingresado
+        </div>
+    <?php
+    }
+    ?>    
             </div>
         </div>   
     </div>
 
-<script>
 
+
+<script>
 var isOpen = false;
 
 $('#btn-soy-voluntario').on('click', function(){
