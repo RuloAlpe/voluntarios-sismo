@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use yii\widgets\ListView;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\NecesidadesSearch */
@@ -13,12 +13,12 @@ $this->title = 'Que se requiere';
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            
+
             <div class="ent-necesidades-index">
 
             <h1><?= Html::encode($this->title) ?></h1>
             <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-            
+
             <h5>
                 Revisa que la solicitud para la localidad que seleccionaste no exista ya en el listado para evitar duplicidad de datos.
             </h5>
@@ -26,24 +26,12 @@ $this->title = 'Que se requiere';
             <p>
                 <?= Html::a('Crear una nueva solicitud', ['create', 'idVol'=>$idVol, 'idLoc'=>$idLoc], ['class' => 'btn btn-warning']) ?>
             </p>
-            <?= GridView::widget([
+            <?= ListView::widget([
                 'dataProvider' => $dataProvider,
-                'filterModel' => $searchModel,
-                'columns' => [
-                    ['class' => 'yii\grid\SerialColumn'],
-
-                    //'id_necesidad',
-                    //'id_localidad',
-                    //'id_voluntario',
-                    'txt_necesidad',
-                    'num_elementos',
-
-                    ['class' => 'yii\grid\ActionColumn'],
-                ],
+                'itemView' => 'item-necesidad',
             ]); ?>
 
 </div>
         </div>
     </div>
 </div>
-
